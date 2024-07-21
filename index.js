@@ -35,9 +35,9 @@ app.use(express.json());//by default you can not send, any json object like this
 app.use(cookieParser()); //using as middleware
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/api/auth", authRoute);
-app.use("/api/users", userRoute);
-app.use("/api/tasks", taskRoute);
+app.use("/auth", authRoute);
+app.use("/users", userRoute);
+app.use("/tasks", taskRoute);
 
 //error handling middleware
 app.use((err, req, res, next) => {
