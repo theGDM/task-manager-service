@@ -13,6 +13,10 @@ const TaskSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    column: {
+        type: Number,
+        required: true,
+    },
     taskDeadline: {
         type: String,
         required: true,

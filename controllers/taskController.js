@@ -20,6 +20,7 @@ export const createTask = async (req, res, next) => {
         userId: userId,
         title: title,
         description: description,
+        column: 0,
         taskDeadline: taskDeadline,
     });
 
