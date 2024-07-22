@@ -25,9 +25,15 @@ export const deleteUser = async (req, res, next) => {
 }
 
 export const getUser = async (req, res, next) => {
-    let { id } = req.params; //user id
+    let { emailId } = req.params;
+    let user = await User.findOne({ email: emailId });
+    if (!user) return res.status(200).json({
+        "success": false,
+        "message": "User not found!"
+    });
+
     try {
-        const user = await User.findById(id);
+        user = await User.findById(user._id);
         res.status(200).json(user);
     } catch (err) {
         next(err);
